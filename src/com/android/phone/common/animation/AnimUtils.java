@@ -60,6 +60,7 @@ public class AnimUtils {
                 if (callback != null) {
                     callback.onAnimationEnd();
                 }
+                fadeOut.animate().setListener(null);
             }
 
             @Override
@@ -69,6 +70,7 @@ public class AnimUtils {
                 if (callback != null) {
                     callback.onAnimationCancel();
                 }
+                fadeOut.animate().setListener(null);
             }
         });
         if (durationMs != DEFAULT_DURATION) {
@@ -100,6 +102,7 @@ public class AnimUtils {
                 if (callback != null) {
                     callback.onAnimationCancel();
                 }
+                fadeIn.animate().setListener(null);
             }
 
             @Override
@@ -107,6 +110,7 @@ public class AnimUtils {
                 if (callback != null) {
                     callback.onAnimationEnd();
                 }
+                fadeIn.animate().setListener(null);
             }
         });
         if (durationMs != DEFAULT_DURATION) {
@@ -132,6 +136,7 @@ public class AnimUtils {
             public void onAnimationCancel(Animator animation) {
                 view.setScaleX(1);
                 view.setScaleY(1);
+                view.animate().setListener(null);
             }
         });
         scaleInternal(view, 0 /* startScaleValue */, 1 /* endScaleValue */, durationMs,
@@ -149,6 +154,7 @@ public class AnimUtils {
             @Override
             public void onAnimationEnd(Animator animation) {
                 view.setVisibility(View.GONE);
+                view.animate().setListener(null);
             }
 
             @Override
@@ -156,6 +162,7 @@ public class AnimUtils {
                 view.setVisibility(View.GONE);
                 view.setScaleX(0);
                 view.setScaleY(0);
+                view.animate().setListener(null);
             }
         };
 
